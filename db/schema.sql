@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS platonic_db;
+CREATE DATABASE platonic_db;
