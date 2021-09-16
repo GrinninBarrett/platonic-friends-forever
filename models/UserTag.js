@@ -12,6 +12,10 @@ UserTag.init(
       primaryKey: true,
       autoIncrement: true
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     tag_id: {
       type: DataTypes.INTEGER,
       allowNull: false
