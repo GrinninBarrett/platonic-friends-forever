@@ -4,7 +4,7 @@ const sequelize = require('../config/connection.js');
 
 class UserTag extends Model {}
 
-User.init(
+UserTag.init(
   {  
     id: {
       type: DataTypes.INTEGER,
