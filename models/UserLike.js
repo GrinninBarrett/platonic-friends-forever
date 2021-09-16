@@ -4,7 +4,7 @@ const sequelize = require('../config/connection.js');
 
 class UserLike extends Model {}
 
-User.init(
+UserLike.init(
   {  
     id: {
       type: DataTypes.INTEGER,
