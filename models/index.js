@@ -5,7 +5,14 @@ const UserTag = require('./UserTag');
 
 User.belongsToMany(User, {
     through: UserLike,
-    foreignKey: 'user_id'
+    as: 'main',
+    foreignKey: 'main_id'
+});
+
+User.belongsToMany(User, {
+    through: UserLike,
+    as: 'liked',
+    foreignKey: 'liked_id'
 });
 
 Tag.belongsToMany(User, {
