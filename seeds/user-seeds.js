@@ -6,6 +6,7 @@ const userData = [
     last_name: 'Marley',
     state: 'NC',
     city: 'Apex',
+    bio: 'I like music and soccer',
     email: 'test@gmail.com',
     password: 'password1'
   },  
@@ -14,6 +15,7 @@ const userData = [
     last_name: 'Simmons',
     state: 'NC',
     city: 'Raleigh',
+    bio: 'I like makeup and metal',
     email: 'test2@gmail.com',
     password: 'password2'
   }, 
@@ -22,6 +24,7 @@ const userData = [
     last_name: 'Plant',
     state: 'NC',
     city: 'Cary',
+    bio: 'Have you ever heard of of stariway to heaven',
     email: 'test3@gmail.com',
     password: 'Password3'
   }, 
@@ -30,6 +33,7 @@ const userData = [
     last_name: 'Blart',
     state: 'NC',
     city: 'Durham',
+    bio: 'I am basically a real cop',
     email: 'test4@gmail.com',
     password: 'password4'
   }, 
@@ -38,6 +42,7 @@ const userData = [
     last_name: 'Uzumaki',
     state: 'NC',
     city: 'Wilson',
+    bio: 'I will be hokage one day',
     email: 'test5@gmail.com',
     password: 'Password5'
   }, 
