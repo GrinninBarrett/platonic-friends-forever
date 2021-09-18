@@ -14,10 +14,13 @@ UserLike.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      references: {
+        model: 'user',
+        key: 'id',
+      }
     },
     user_liked_user_id: {
-      type: DataTypes.INTEGER,      
+      type: DataTypes.INTEGER,
     }
   },
   {
