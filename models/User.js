@@ -52,7 +52,15 @@ User.init(
   },
   {
     hooks: {
+      beforeBulkCreate: async (newUserData) => {
+        newUserData = await Promise.all(newUserData.map(async (user) => {
+          user.password = await bcrypt.hash(user.password, 10);
+          return user;
+        }));
+        return newUserData;
+      },
       beforeCreate: async (newUserData) => {
+        console.log(newUserData);
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
@@ -60,7 +68,7 @@ User.init(
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
       },
-    },  
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
