@@ -51,6 +51,25 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Delete user
+router.delete('/:id', async (req, res) => {
+  // delete a category by its `id` value
+  try {
+    const userData = await User.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    if (!userData) {
+      res.status(400).json({ message: 'No user with that id.'});
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // Log a user in, checking for correct credentials
 router.post('/login', async (req, res) => {
