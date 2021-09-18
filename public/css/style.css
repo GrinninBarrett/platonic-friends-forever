@@ -5,3 +5,45 @@
     font-size: inherit;
 }
 
+body {
+    justify-content: center;
+}
+
+.footer-hidden {
+    padding: 10px;
+}
+
+.column-label-login {
+    margin: 20px;
+    padding: 10px;
+}
+
+.row-auth-wrapper {
+    margin: 20px;
+    border: 1px solid;
+    padding: 10px 0 10 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 150px;
+    max-width: 550px;
+    min-height: 150px;
+    max-height: 550px;
+    justify-content: center;
+}
+
+.row-login-wrapper {
+    margin: 20px;
+    border: 1px solid;
+    padding: 10px 0 10 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 150px;
+    max-width: 550px;
+    min-height: 150px;
+    max-height: 550px;
+    justify-content: center;
+}
+
+.column-label-login {
+    justify-content: center;
+}
