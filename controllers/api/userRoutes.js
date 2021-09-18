@@ -1,6 +1,41 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Tag } = require('../../models');
 
+
+// Get all users
+router.get("/", async (req, res) => {
+  // find all tags
+  try {
+    const userData = await User.findAll({
+      include: [{ model: Tag, as: "tags" }],
+    });
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+// Get single user by ID
+router.get("/:id", async (req, res) => {
+  // find a single tag by its `id`
+  // be sure to include its associated Product data
+  try {
+    const userData = await User.findByPk(req.params.id, {
+      include: [{ model: Tag, as: "tags" }],
+    });
+    if (!userData) {
+      res.status(404).json({ message: "No user found with that id." });
+      return;
+    }
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+// Create a new user
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,6 +51,8 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+// Log a user in, checking for correct credentials
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -23,7 +60,7 @@ router.post('/login', async (req, res) => {
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password. Please try again' });
       return;
     }
 
@@ -32,7 +69,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password. Please try again' });
       return;
     }
 
@@ -48,6 +85,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+// Log a user out
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

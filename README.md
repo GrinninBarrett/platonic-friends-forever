@@ -41,6 +41,8 @@ The application uses the [express-handlebars](https://www.npmjs.com/package/expr
 <!-- TODO: Add challenges as they arise -->
 
 ## Future Development
+* Add the ability for users to follow other users
+* Add the ability for users to make posts, creating a "news feed" of posts from followed users on the home page
 
 <!-- TODO: Add ideas for future development as they arise -->
 
