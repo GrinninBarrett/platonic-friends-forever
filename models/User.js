@@ -31,6 +31,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    bio: {
+      type: DataTypes.STRING
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
