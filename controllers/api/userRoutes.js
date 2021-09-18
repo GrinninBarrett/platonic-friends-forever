@@ -51,6 +51,24 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+router.put('/:id', async (req, res) => {
+  // update a category by its `id` value
+  try {
+    const user = await User.findByPk(req.params.id);
+    const userData = await user.update(req.body);
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 // Delete user
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
