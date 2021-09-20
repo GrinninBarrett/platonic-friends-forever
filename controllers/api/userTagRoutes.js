@@ -53,7 +53,26 @@ router.put('/:id', async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
-  });
+});
+
+
+// Delete UserTag
+router.delete('/:id', async (req, res) => {
+    try {
+      const userTagData = await UserTag.destroy({
+        where: {
+          id: req.params.id
+        }
+      });
+      if (!userTagData) {
+        res.status(400).json({ message: 'No UserTag with that id.'});
+        return;
+      }
+      res.status(200).json(userTagData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
 
 
 
