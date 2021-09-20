@@ -39,6 +39,23 @@ router.post('/', async (req, res) => {
 });
 
 
+// Update a UserTag
+router.put('/:id', async (req, res) => {
+    try {
+      const userTag = await UserTag.findByPk(req.params.id);
+      const userTagData = await userTag.update(req.body);
+      req.session.save(() => {
+        req.session.user_id = userTagData.id;
+        req.session.logged_in = true;
+  
+        res.status(200).json(userTagData);
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
 
 
 
