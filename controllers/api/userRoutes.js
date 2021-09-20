@@ -4,7 +4,6 @@ const { User, Tag } = require('../../models');
 
 // Get all users
 router.get("/", async (req, res) => {
-  // find all tags
   try {
     const userData = await User.findAll({
       include: [{ model: Tag, as: 'tags' }],
@@ -18,8 +17,6 @@ router.get("/", async (req, res) => {
 
 // Get single user by ID
 router.get("/:id", async (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
   try {
     const userData = await User.findByPk(req.params.id, {
       include: [{ model: Tag, as: 'tags' }],
@@ -52,8 +49,8 @@ router.post('/', async (req, res) => {
 });
 
 
+// Update a user
 router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
   try {
     const user = await User.findByPk(req.params.id);
     const userData = await user.update(req.body);
@@ -71,7 +68,6 @@ router.put('/:id', async (req, res) => {
 
 // Delete user
 router.delete('/:id', async (req, res) => {
-  // delete a category by its `id` value
   try {
     const userData = await User.destroy({
       where: {
