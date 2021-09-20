@@ -1,0 +1,62 @@
+<div class="row-auth-wrapper">
+    <div class="column-label-login" id="leftdiv">
+        <div class="form-wrapper">
+            <form class="col s12 signup-form">
+                <h2>Create New Account</h2>
+                <div class="column-label-login">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="name-signup" type="text" class="validate">
+                            <label for="last_name">Full Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            {{!-- check what email does and if we can delete it as an id --}}
+                            <input id="email email-signup" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            {{!-- check what password does and if we can delete it as an id --}}
+                            <input id="password password-signup" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Submit</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row-login-wrapper">
+        <div class="column-label-login" id="rightdiv">
+            <div class="form-wrapper">
+                <form class="col s12 login-form">
+                    <h2>Login</h2>
+                    <div class="column-label-login">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            {{!-- check what icon-prefix does and if we can delete it as an id --}}
+                            <input id="icon_prefix email-login" type="text" class="validate">
+                            <label for="icon_prefix">Email</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">password</i>
+                            {{!-- check what icon-password does and if we can delete it as an id --}}
+                            <input id="icon_password password-login" type="password" class="validate">
+                            <label for="icon_password">Password</label>
+                        </div>
+                    </div>
+                    <a href="./profile-page.html" class="waves-effect waves-light btn">
+                    <i class="material-icons left">checkbox</i>Login</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="../public/js/login.js"></script>
+    <script type="text/javascript" src="./public/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./public/js/materialize.js"></script>
