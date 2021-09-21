@@ -1,77 +1,83 @@
 .icon-block {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 .icon-block .material-icons {
-    font-size: inherit;
+  font-size: inherit;
+}
+
+.material-icons {
+  font-size: inherit;
 }
 
 body {
-    justify-content: center;
+  justify-content: center;
 }
 
 .footer-hidden {
-    padding: 10px;
+  padding: 10px;
 }
 
 .column-label-login {
-    margin: 20px;
-    padding: 10px;
+  margin: 20px;
+  padding: 10px;
 }
 
 .row-auth-wrapper {
-    margin: 20px;
-    border: 1px solid;
-    padding: 10px 0 10 0;
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 150px;
-    max-width: 550px;
-    min-height: 150px;
-    max-height: 550px;
-    justify-content: center;
+  margin: 20px;
+  border: 1px solid;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 150px;
+  max-width: 550px;
+  min-height: 150px;
+  max-height: 550px;
+  justify-content: center;
+  align-items: center;
 }
 
 .row-login-wrapper {
-    margin: 20px;
-    border: 1px solid;
-    padding: 10px 0 10 0;
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 150px;
-    max-width: 550px;
-    min-height: 150px;
-    max-height: 550px;
-    justify-content: center;
+  margin: 20px;
+  border: 1px solid;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 150px;
+  max-width: 550px;
+  min-height: 150px;
+  max-height: 550px;
+  justify-content: center;
+  align-items: center;
 }
 
 .column-label-login {
-    justify-content: center;
+  justify-content: center;
 }
 
 .card-image {
-    margin: 20px;
-    min-width: 150px;
-    max-width: 550px;
-    min-height: 150px;
-    max-height: 550px;
+  margin: 20px;
+  min-width: 150px;
+  max-width: 550px;
+  min-height: 150px;
+  max-height: 550px;
 }
 
 .swipe.content {
-    margin:20px;
-    padding:20px;
-    min-width: 150px;
-    max-width: 550px;
-    min-height: 150px;
-    max-height: 550px;
-    justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  min-width: 150px;
+  max-width: 550px;
+  min-height: 150px;
+  max-height: 550px;
+  justify-content: center;
 }
 
 .swipe-image {
-    margin:20px;
-    padding:20px;
-    min-width: 150px;
-    max-width: 550px;
-    min-height: 150px;
-    max-height: 550px;
-    justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  min-width: 150px;
+  max-width: 550px;
+  min-height: 150px;
+  max-height: 550px;
+  justify-content: center;
 }
