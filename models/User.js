@@ -21,16 +21,19 @@ User.init(
       allowNull: false
     },
     last_name: {
-      type: DataTypes.STRING,      
+      type: DataTypes.STRING
     },
     state: {
       type: DataTypes.STRING,
+      defaultValue: 'N/A'
     },
     city: {
       type: DataTypes.STRING,
+      defaultValue: 'N/A'
     },
     bio: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: 'N/A'
     },
     email: {
       type: DataTypes.STRING,
