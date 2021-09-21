@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./public/css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
+<nav class="teal lighten-1" role="navigation">
+  <div class="nav-wrapper container"><a
+      id="logo-container"
+      href="#"
+      class="brand-logo"
+    >PFF</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="./login-page.html" class="brown-text">Login</a></li>
+      <li><a href="#" class="brown-text">Resources</a></li>
+    </ul>
+    <ul id="nav-mobile" class="sidenav">
+      <li><a href="./login.html" class="brown-text">Login</a></li>
+      <li><a href="#" class="brown-text">Resources</a></li>
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i
+        class="material-icons"
+      >menu</i></a>
+  </div>
+</nav>
+
+    
     <main >
         {{{body}}}
     </main>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="brown-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of students working on this project like it's our full time job. Thank you for signing up to support the continued development of this project. You are greatly appreciated!</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="brown-text">Settings</h5>
+          <ul>
+            <li><a class="teal-text" href="#!">Link 1</a></li>
+            <li><a class="teal-text" href="#!">Link 2</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="brown-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Github</a></li>
+            <li><a class="white-text" href="#!">Heroku</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
     
-    <a href="/profile">profile</a>
 </body>
     <script src="../public/js/login.js"></script>
     <script type="text/javascript" src="./public/js/materialize.min.js"></script>
