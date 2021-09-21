@@ -47,3 +47,31 @@ body {
 .column-label-login {
     justify-content: center;
 }
+
+.card-image {
+    margin: 20px;
+    min-width: 150px;
+    max-width: 550px;
+    min-height: 150px;
+    max-height: 550px;
+}
+
+.swipe.content {
+    margin:20px;
+    padding:20px;
+    min-width: 150px;
+    max-width: 550px;
+    min-height: 150px;
+    max-height: 550px;
+    justify-content: center;
+}
+
+.swipe-image {
+    margin:20px;
+    padding:20px;
+    min-width: 150px;
+    max-width: 550px;
+    min-height: 150px;
+    max-height: 550px;
+    justify-content: center;
+}
