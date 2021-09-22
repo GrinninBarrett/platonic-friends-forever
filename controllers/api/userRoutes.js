@@ -86,6 +86,23 @@ router.delete('/:id', async (req, res) => {
 });
 
 
+// Delete the account of the logged in user
+router.delete('/', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.destroy({
+      where: {
+        id: req.session.user_id
+      }
+    });
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 // Log a user in, checking for correct credentials
 router.post('/login', async (req, res) => {
   try {
