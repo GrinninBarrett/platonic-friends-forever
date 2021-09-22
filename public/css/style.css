@@ -13,6 +13,18 @@ body {
   justify-content: center;
 }
 
+.card-content {
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-picture {
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
 .footer-hidden {
   padding: 10px;
 }

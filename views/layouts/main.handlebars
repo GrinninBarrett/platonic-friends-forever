@@ -10,30 +10,37 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<nav class="teal lighten-1" role="navigation">
-  <div class="nav-wrapper container"><a
-      id="logo-container"
-      href="/"
-      class="brand-logo"
-    >PFF</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="/login" class="brown-text">Login</a></li>
-      <li><a href="#" class="brown-text">Resources</a></li>
-    </ul>
-    <ul id="nav-mobile" class="sidenav">
-      <li><a href="/login" class="brown-text">Login</a></li>
-      <li><a href="#" class="brown-text">Resources</a></li>
-    </ul>
-    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i
-        class="material-icons"
-      >menu</i></a>
-  </div>
-</nav>
+    {{#if logged_in}}
+      <nav class="teal lighten-1" role="navigation">
+        <div class="nav-wrapper">
+          <a href="" class="brand-logo">Profile</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="./chat-page.html">Chat</a></li>
+            <li><a href="friends-page.html">Your Friends<span class="new badge">4</span></a></li>
+            <li><a id="logout" href="">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    {{else}}
+      <nav class="teal lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">PFF</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/login" class="brown-text">Login</a></li>
+            <li><a href="#" class="brown-text">Resources</a></li>
+          </ul>
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="/login" class="brown-text">Login</a></li>
+            <li><a href="#" class="brown-text">Resources</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+    {{/if}}
 
     
-    <main >
-        {{{body}}}
-    </main>
+  <main >
+    {{{body}}}
+  </main>
 
   <footer class="page-footer orange">
     <div class="container">
@@ -45,10 +52,17 @@
         <div class="col l3 s12">
           <h5 class="brown-text">Connect</h5>
           <ul>
-            <li><a class="white-text" href="#!">Github</a></li>
+            <li><a class="white-text" href="https://github.com/GrinninBarrett/platonic-friends-forever">Github</a></li>
             <li><a class="white-text" href="#!">Heroku</a></li>
           </ul>
         </div>
+          <div class="col l3 s12">
+            <h5 class="brown-text">General</h5>
+              <ul>
+                <li><a class="white-text" href="/index.html">Sign Up</a></li>
+                <li><a class="white-text" href="/login-page.html">Log in</a></li>
+              </ul>
+          </div>
       </div>
     </div>
     <div class="footer-copyright">

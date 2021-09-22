@@ -1,34 +1,66 @@
 <div class="row-auth-wrapper">
-    <div class="column-label-login" id="leftdiv">
-        <div class="form-wrapper">
-            <form class="col s12 signup-form">
-                <h2>Create New Account</h2>
-                <div class="column-label-login">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="name-signup" type="text" class="validate" placeholder="Full Name">
-                            <label for="full-name"></label>
-                        </div>
+    <div class="form-wrapper">
+        <form class="col s12">
+            <h2>Create New Account</h2>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">person</i>
+                        <input id="first_name" type="text" class="validate" placeholder="First Name">
+                        <label for="first-name"></label>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email-signup" type="email" class="validate" placeholder="Email">
-                            <label for="email"></label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password-signup" type="password" class="validate" placeholder="Password">
-                            <label for="password"></label>
-                        </div>
-                    </div>
-                    <a id="create-account-button" class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Submit</a>
                 </div>
-            </form>
-        </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">person</i>
+                        <input id="last_name" type="text" class="validate" placeholder="Last Name">
+                        <label for="last-name"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="email-signup" type="email" class="validate" placeholder="Email">
+                        <label for="email"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">password</i>
+                        <input id="password-signup" type="password" class="validate" placeholder="Password">
+                        <label for="password"></label>
+                    </div>
+                </div>
+                <a id="create-account-button" class="waves-effect waves-light btn">
+                <i class="material-icons left">checkbox</i>Submit</a>
+        </form>
     </div>
+</div>
 
-    <div class="row-login-wrapper">
+<div class="row-auth-wrapper">
+    <div class="form-wrapper">
+        <form id="login-form" class="col s12">
+            <h2>Login</h2>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="email-login" type="text" class="validate" placeholder="Email">
+                    <label for="icon_prefix"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">password</i>
+                    <input id="password-login" type="password" class="validate" placeholder="Password">
+                    <label for="icon_password"></label>
+                </div>
+            </div>
+                <a id="login-button" class="waves-effect waves-light btn">
+                <i class="material-icons left">checkbox</i>Login</a>
+        </form>
+    </div>
+</div>
+
+    {{!-- <div class="row-login-wrapper">
         <div class="column-label-login" id="rightdiv">
             <div class="form-wrapper">
                 <form id="login-form" class="col s12">
@@ -50,5 +82,5 @@
                 </form>
             </div>
         </div>
-    </div>
-</div>
+    </div> --}}
+{{!-- </div> --}}
