@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Tag } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 // Get all users
@@ -79,6 +80,23 @@ router.delete('/:id', async (req, res) => {
       res.status(400).json({ message: 'No user with that id.'});
       return;
     }
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+// Delete the account of the logged in user
+router.delete('/', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.destroy({
+      where: {
+        id: req.session.user_id
+      }
+    });
+
     res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
