@@ -87,12 +87,13 @@ body {
 }
 
 .submit-button {
-  width: 33%;
+  width: 60%;
 }
 
 .button-icon {
-  width: 20%;
-  margin: 0;
+  width: 10%;
+  position: absolute;
+  left: 10px;
 }
 
 .column-label-login {
