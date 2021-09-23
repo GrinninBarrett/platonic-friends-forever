@@ -80,4 +80,37 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+router.get('/swipe', withAuth, async (req, res) => {
+  try {
+    // Get all users
+    const userData = await User.findAll({
+      include: [
+        {
+          model: Tag,
+          attributes: ['tag_name'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const users = userData.map((user) => user.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    if (req.session.logged_in) {
+      res.render('swipe', { 
+        users, 
+        logged_in: req.session.logged_in 
+      });
+      return;
+    }
+
+    res.render('/login');
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 module.exports = router;
