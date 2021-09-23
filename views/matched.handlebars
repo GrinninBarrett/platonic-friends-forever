@@ -1,7 +1,13 @@
-
+{{#each users as |user|}}
 <div class="container">
     <div class="row">
         <p>{{first_name}}</p>
-        <p>{{bio}}</p>       
+        <p>{{last_name}}</p>
+        <p>{{bio}}</p>    
+        <p>{{city}}</p>
+        <p>{{state}}</p>
+        <p>{{email}}</p>
+        
     </div>
 </div>
+{{/each}}
