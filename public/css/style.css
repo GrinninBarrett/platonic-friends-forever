@@ -1,3 +1,15 @@
+body {
+  justify-content: center;
+}
+
+.nav-wrapper {
+  padding: 0 25px;
+}
+
+.mobile-nav-link {
+  margin-top: 10px;
+}
+
 .icon-block {
   padding: 0 15px;
 }
@@ -11,10 +23,6 @@
 
 .join-link {
   text-decoration: underline;
-}
-
-body {
-  justify-content: center;
 }
 
 .card-content {
@@ -43,7 +51,7 @@ body {
 }
 
 .row-auth-wrapper {
-  margin: 20px;
+  margin: auto;
   padding: 10px 10px;
   display: flex;
   justify-content: center;
@@ -56,9 +64,35 @@ body {
 .form-wrapper {
   display: flex;
   justify-content: center;
-  border: 1px solid;
   margin: 20px 20px;
   padding: 20px 30px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.form {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-header {
+  margin-top: 0;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.submit-button {
+  width: 33%;
+}
+
+.button-icon {
+  width: 20%;
+  margin: 0;
 }
 
 .column-label-login {
