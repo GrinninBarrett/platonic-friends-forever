@@ -6,6 +6,10 @@ body {
   padding: 0 25px;
 }
 
+.mobile-nav-link {
+  margin-top: 10px;
+}
+
 .icon-block {
   padding: 0 15px;
 }
