@@ -1,3 +1,11 @@
+body {
+  justify-content: center;
+}
+
+.logo-link {
+  margin-left: 25px;
+}
+
 .icon-block {
   padding: 0 15px;
 }
@@ -11,10 +19,6 @@
 
 .join-link {
   text-decoration: underline;
-}
-
-body {
-  justify-content: center;
 }
 
 .card-content {

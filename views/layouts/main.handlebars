@@ -10,32 +10,38 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    {{#if logged_in}}
-      <nav class="teal lighten-1" role="navigation">
-        <div class="nav-wrapper">
-          <a href="" class="brand-logo">Profile</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">            
-            <li><a href="./swipe">Find Friends!</a></li>
+  <header>
+    <nav class="teal lighten-2" role="navigation">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo logo-link">PFF</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down nav-links">
+          {{#if logged_in}}
+          <li><a href="/swipe">Find Friends!</a></li>
+          <li><a class="dropdown-trigger" href="#" data-target="profile">Profile<i class="material-icons right">arrow_drop_down</i></a></li>
+          <ul id="profile" class="dropdown-content">
+            <li><a href="/profile">Dashboard</a></li>
             <li><a href="/matched">Your Friends<span class="new badge">4</span></a></li>
-            <li><a id="logout" href="">Logout</a></li>
           </ul>
-        </div>
-      </nav>
-    {{else}}
-      <nav class="teal lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">PFF</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="/login" class="brown-text">Signup</a></li>
-            <li><a href="/login" class="brown-text">Log in</a></li>
+          <li><a id="logout" href="/">Logout</a></li>
+          <ul class="sidenav" id="mobile-menu">
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/matched">Your Friends</a></li>
+            <li><a id="logout" href="/">Logout</a></li>
           </ul>
-          <ul id="nav-mobile" class="sidenav">
-            <li><a href="/login" class="brown-text">Signup</a></li>
-            <li><a href="/login" class="brown-text">Log in</a></li>
+          {{else}}
+          <li><a href="/signup" class="white-text">Signup</a></li>
+          <li><a href="/login" class="white-text">Log in</a></li>
+          <ul class="sidenav" id="mobile-menu">
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/matched">Your Friends</a></li>
+            <li><a id="logout" href="/">Logout</a></li>
           </ul>
-          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </div>
-      </nav>
-    {{/if}}
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+  </header>
+
 
     
   <main >
