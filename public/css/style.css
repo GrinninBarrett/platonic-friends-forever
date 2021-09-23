@@ -29,6 +29,10 @@ body {
   justify-content: center;
 }
 
+.friend_pic {
+  width: 300px;
+  height: auto;
+}
 .footer-hidden {
   padding: 10px;
 }
