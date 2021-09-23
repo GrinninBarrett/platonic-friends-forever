@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Tag, UserLike } = require('../models');
 const withAuth = require('../utils/auth');
 
+
 router.get('/', async (req, res) => {
   try {
     // Get all users
@@ -27,6 +28,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 // Get single user by ID
 router.get('/user/:id', async (req, res) => {
   try {
@@ -50,6 +52,7 @@ router.get('/user/:id', async (req, res) => {
   }
 });
 
+
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -70,6 +73,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to profile route
   if (req.session.logged_in) {
@@ -79,6 +83,16 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+
+  res.render('signup');
+})
 
 
 router.get('/swipe', withAuth, async (req, res) => {
@@ -111,6 +125,8 @@ router.get('/swipe', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 router.get('/matched', withAuth, async (req, res) => {
   try {
     // Get all users
