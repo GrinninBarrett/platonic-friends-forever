@@ -2,8 +2,8 @@ body {
   justify-content: center;
 }
 
-.logo-link {
-  margin-left: 25px;
+.nav-wrapper {
+  padding: 0 25px;
 }
 
 .icon-block {
