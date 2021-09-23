@@ -1,30 +1,29 @@
 <div>
     <div class="row-auth-wrapper">
         <div class="form-wrapper z-depth-3">
-            <form class="form">
+            <form id="create-account-form" class="form">
                 <h5 class="center-align form-header">Create New Account</h5>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">person</i>
-                        <input id="first_name" type="text" class="validate" placeholder="First Name">
-                        <label for="first-name"></label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">person</i>
-                        <input id="last_name" type="text" class="validate" placeholder="Last Name">
-                        <label for="last-name"></label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="email-signup" type="email" class="validate" placeholder="Email">
-                        <label for="email"></label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">password</i>
-                        <input id="password-signup" type="password" class="validate" placeholder="Password">
-                        <label for="password"></label>
-                    </div>
-                    <button id="create-account-button" class="waves-effect waves-light btn center-align" type="submit">
-                    <i class="material-icons left button-icon">checkbox</i>Submit</button>
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input id="first-name" type="text" class="validate" placeholder="First Name" required>
+                    <label for="first-name"></label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input id="last-name" type="text" class="validate" placeholder="Last Name">
+                    <label for="last-name"></label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="email-signup" type="email" class="validate" placeholder="Email" required>
+                    <label for="email"></label>
+                </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">password</i>
+                    <input id="password-signup" type="password" class="validate" placeholder="Password" required>
+                    <label for="password"></label>
+                </div>
+                <button id="create-account-button" class="waves-effect waves-light btn submit-button center-align" type="submit">Submit</button>
             </form>
         </div>
     </div>
