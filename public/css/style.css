@@ -61,6 +61,26 @@ body {
 .form {
   width: 100%;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-header {
+  margin-top: 0;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.submit-button {
+  width: 33%;
+}
+
+.button-icon {
+  width: 20%;
+  margin: 0;
 }
 
 .column-label-login {
