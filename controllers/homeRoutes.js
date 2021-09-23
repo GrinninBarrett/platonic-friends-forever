@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Tag } = require('../models');
+const { User, Tag, UserLike } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -99,6 +99,36 @@ router.get('/swipe', withAuth, async (req, res) => {
     // Pass serialized data and session flag into template
     if (req.session.logged_in) {
       res.render('swipe', { 
+        users, 
+        logged_in: req.session.logged_in 
+      });
+      return;
+    }
+
+    res.render('/login');
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+router.get('/matched', withAuth, async (req, res) => {
+  try {
+    // Get all users
+    const userData = await User.findAll({
+      include: [
+        {
+          model: Tag,
+          attributes: ['tag_name'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const users = userData.map((user) => user.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    if (req.session.logged_in) {
+      res.render('matched', { 
         users, 
         logged_in: req.session.logged_in 
       });
