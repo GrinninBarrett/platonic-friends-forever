@@ -35,6 +35,10 @@ User.init(
       type: DataTypes.STRING,
       defaultValue: 'N/A'
     },
+    profile_pic: {
+      type: DataTypes.STRING,
+      defaultValue: 'N/A'
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -48,7 +52,7 @@ User.init(
       allowNull: false,
       validate: {
         len: [8],
-      },
+      },        
     }
   },
   {
