@@ -11,4 +11,8 @@ const logout = async () => {
   }
 };
 
-document.querySelector("#logout").addEventListener("click", logout);
+let logoutButtons = document.querySelectorAll(".logout");
+
+for (let i = 0; i < logoutButtons.length; i++) {
+  logoutButtons[i].addEventListener("click", logout);
+}
