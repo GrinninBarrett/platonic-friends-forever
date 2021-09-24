@@ -65,9 +65,9 @@ router.post('/', async (req, res) => {
 
 
 // Update a user
-router.put('/:id', async (req, res) => {
+router.put('/', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await User.findByPk(req.session.user_id);
     const userData = await user.update(req.body);
     req.session.save(() => {
       req.session.user_id = userData.id;

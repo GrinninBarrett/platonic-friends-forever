@@ -83,23 +83,22 @@ const handleUpdateUser = async (event) => {
   const city = updateCityEl.value.trim();
   const state = updateStateEl.value.trim()
   const bio = updateBioEl.value.trim();
-  const password = updatePasswordEl.value.trim();
 
   // Exit function if no fields have any text in them
-  if (!(first_name || last_name || city || state || bio || password)) {
+  if (!(first_name || last_name || city || state || bio)) {
     return;
   }
 
-  const userData = await fetch('api/users/edit', {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  })
+  // const userData = await fetch('api/users/edit', {
+  //   method: "GET",
+  //   headers: { "Content-Type": "application/json" },
+  // })
 
-  let userID = userData.id;
+  // let userID = userData.id;
 
-  const response = await fetch(`/api/users/${userID}`, {
+  const response = await fetch('/api/users', {
     method: "PUT",
-    body: JSON.stringify({ first_name, last_name, city, state, bio, password }),
+    body: JSON.stringify({ first_name, last_name, city, state, bio }),
     headers: { "Content-Type": "application/json" },
   })
 
