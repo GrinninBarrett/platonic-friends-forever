@@ -1,25 +1,26 @@
 {{#each users as |user|}}
 
-<div class="container center-align" id="swipe-card">
-  <div class="card z-depth-3" id="swipe-info">
-      <img class="friend_pic center-align" src="{{profile_pic}}" alt="{{first_name}}">
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4"><h5>{{first_name}} {{last_name}}</h5><i class="material-icons right">more_vert</i></span>
-         <ul>
-            <li><a class="teal-text left" href="#!"><h3>Like</h3></a></li>
-            <li><a class="teal-text right" href="#!"><h3>Dislike</h3></a></li>
-          </ul>
+<div class="container center-align row">
+  <div class="card swipe-card col s12 m8 offset-m2 xl6 offset-xl3 z-depth-3">
+      <img class="friend-pic center-align" src="{{profile_pic}}" alt="{{first_name}} {{#if last_name}}{{last_name}}{{/if}}">
+    <div class="card-content swipe-info">
+      <h5 class="grey-text text-darken-4">
+        {{first_name}} {{last_name}}
+        <span class="activator"><i class="material-icons card-icon right">more_vert</i></span>
+      </h5>
+        <ul class="card-buttons">
+          <li><button id="follow-button" class="waves-effect waves-light btn left swipe-button">Follow</button></li>
+          <li><button id="dismiss-button" class="waves-effect waves-light btn right swipe-button">Dismiss</button></li>
+        </ul>
     </div>
     <div class="card-reveal center-align">
-      <span class="card-title grey-text text-darken-4"><h4>{{first_name}} {{last_name}}</h4><i class="material-icons right">close</i></span>
-      <p class="center-align">{{bio}}</p>
+      <h5 class="card-title grey-text text-darken-4">
+        {{first_name}} {{last_name}}
+        <span class="activator"><i class="material-icons card-icon right">close</i></span>
+      </h5>
+      <p class="card-bio center-align">{{bio}}</p>
     </div>
   </div>
 </div>
 
 {{/each}}
-
-
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
