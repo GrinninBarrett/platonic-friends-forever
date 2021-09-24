@@ -151,3 +151,10 @@ h5 {
 .column-label-login {
   justify-content: center;
 }
+
+.toast {
+  position: relative;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+}

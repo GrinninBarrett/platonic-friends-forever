@@ -15,6 +15,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/edit", async (req, res) => {
+  try {
+    const userData = await User.findByPk({
+      where: {
+        id: req.session.user_id
+      }    
+    });
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // Get single user by ID
 router.get("/:id", async (req, res) => {
@@ -52,9 +65,9 @@ router.post('/', async (req, res) => {
 
 
 // Update a user
-router.put('/:id', async (req, res) => {
+router.put('/', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await User.findByPk(req.session.user_id);
     const userData = await user.update(req.body);
     req.session.save(() => {
       req.session.user_id = userData.id;
