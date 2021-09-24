@@ -1,10 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
-});
+const deleteButton = document.querySelector("#confirm-user-delete");
+const followButton = document.querySelector("#follow-button");
 
+const toast = function() {
+  M.toast({
+    html: 'Followed user',
+    displayLength: 2000,
+    classes: 'follow-toast'
+  })
+}
 
-const deleteButton = document.querySelector("#test6");
+followButton.addEventListener("click", toast);
 
 
 const logOutDeletedUser = async () => {
