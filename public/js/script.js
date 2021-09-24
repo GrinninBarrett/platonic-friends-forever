@@ -1,16 +1,30 @@
 const deleteButton = document.querySelector("#confirm-user-delete");
-const followButton = document.querySelector("#follow-button");
+const followButtons = document.querySelectorAll(".follow-button");
+const dismissButtons = document.querySelectorAll(".dismiss-button");
 
-const toast = function() {
+const followToast = function() {
   M.toast({
     html: 'Followed user',
     displayLength: 2000,
-    classes: 'follow-toast'
+    classes: 'toast'
   })
 }
 
-followButton.addEventListener("click", toast);
+const dismissToast = function() {
+  M.toast({
+    html: 'Dismissed user',
+    displayLength: 2000,
+    classes: 'toast'
+  })
+}
 
+for (let i = 0; i < followButtons.length; i++) {
+  followButtons[i].addEventListener("click", followToast);
+}
+
+for (let i = 0; i < dismissButtons.length; i++) {
+  dismissButtons[i].addEventListener("click", dismissToast);
+}
 
 const logOutDeletedUser = async () => {
   const response = await fetch('/api/users/logout', {
