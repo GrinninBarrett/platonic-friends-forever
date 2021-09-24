@@ -38,12 +38,41 @@ body {
 }
 
 .friend-pic {
-  width: 300px;
-  height: auto;
+  height: 12rem;
+  width: auto;
   margin: 0px 10px;
   margin-top: 20px;
   box-shadow: 6px 6px teal, -1em 0 0.4em orange;
   border-radius: 2px;
+}
+
+.swipe-card {
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+.swipe-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-buttons {
+  width: 75%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-icon {
+  position: absolute;
+  right: 3rem;
+}
+
+.card-icon:hover {
+  cursor: pointer;
+}
+
+.card-bio {
+  margin-top: 4rem;
 }
 
 #friend-card {
@@ -51,14 +80,6 @@ body {
 }
 
 #friend-info {
-  border-radius: 10px;
-}
-
-#swipe-card {
-  margin-top: 20px;
-}
-
-#swipe-info {
   border-radius: 10px;
 }
 
