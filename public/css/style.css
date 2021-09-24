@@ -50,12 +50,14 @@ h5 {
   border-radius: 2px;
 }
 
-.swipe-card, .friend-card {
+.swipe-card,
+.friend-card {
   margin-top: 2rem;
   border-radius: 10px;
 }
 
-.swipe-info, .friend-info {
+.swipe-info,
+.friend-info {
   display: flex;
   flex-direction: column;
 }
@@ -67,8 +69,16 @@ h5 {
   margin-bottom: 0;
 }
 
-.swipe-button {
+.swipe-button,
+.update-button {
   width: 7rem;
+}
+
+.update-button {
+  margin: auto;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  align-items: center;
 }
 
 .card-icon {
