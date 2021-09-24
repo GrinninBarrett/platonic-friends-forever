@@ -1,15 +1,15 @@
 {{#each users as |user|}}
-<div class="container">
-    <div class="row">
+
+<div class="container center-align" id="friend-card">
+    <div class="row z-depth-3" id="friend-info">
         <img class="friend_pic" src="{{profile_pic}}" alt="{{first_name}}">
-        <p>{{image}}</p>
-        <p>{{first_name}}</p>
-        <p>{{last_name}}</p>
-        <p>{{bio}}</p>    
-        <p>{{city}}</p>
-        <p>{{state}}</p>
-        <p>{{email}}</p>
-        
+        <ul>
+            <li><h5><strong>{{first_name}}</strong></h5></li>
+            <li><h6><em>{{city}}, {{state}}</em></h6></li>
+            <li><h6>{{bio}}</h6></li>
+            <li><a href="mailto:{{email}}" class="match-message">Message</></li>
+        </ul>
     </div>
 </div>
+
 {{/each}}

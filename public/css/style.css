@@ -40,7 +40,32 @@ body {
 .friend_pic {
   width: 300px;
   height: auto;
+  margin: 0px 10px;
+  margin-top: 20px;
+  box-shadow: 6px 6px teal, -1em 0 0.4em orange;
+  border-radius: 2px;
 }
+
+#friend-card {
+  margin-top: 20px;
+}
+
+#friend-info {
+  border-radius: 10px;
+}
+
+#swipe-card {
+  margin-top: 20px;
+}
+
+#swipe-info {
+  border-radius: 10px;
+}
+
+.match-message {
+  text-decoration: underline;
+}
+
 .footer-hidden {
   padding: 10px;
 }
@@ -90,33 +115,5 @@ body {
 }
 
 .column-label-login {
-  justify-content: center;
-}
-
-.card-image {
-  margin: 20px;
-  min-width: 150px;
-  max-width: 550px;
-  min-height: 150px;
-  max-height: 550px;
-}
-
-.swipe.content {
-  margin: 20px;
-  padding: 20px;
-  min-width: 150px;
-  max-width: 550px;
-  min-height: 150px;
-  max-height: 550px;
-  justify-content: center;
-}
-
-.swipe-image {
-  margin: 20px;
-  padding: 20px;
-  min-width: 150px;
-  max-width: 550px;
-  min-height: 150px;
-  max-height: 550px;
   justify-content: center;
 }
