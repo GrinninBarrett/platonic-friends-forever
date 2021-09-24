@@ -61,6 +61,13 @@ SO THAT I can meet new people nearby who share the same interests
 ## Contact
 
 <!-- TODO: Add contact info -->
+* Tucker Barrett - [ctbarrett.tech@gmail.com](mailto:ctbarrett.tech@gmail.com)
+
+* Pam Hammond - [hammondpamelac@gmail.com](mailto:hammondpamelac@gmail.com)
+
+* Emma Robinson - [robinsonecu14@gmail.com](mailto:robinsonecu14@gmail.com)
+
+* Chris Thomas - [christhomas2101@gmail.com](mailto:christhomas2101@gmail.com)
 
 ## License
 

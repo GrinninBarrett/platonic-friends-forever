@@ -61,14 +61,14 @@ h5 {
 }
 
 .card-buttons {
-  width: 75%;
+  width: 85%;
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 0;
 }
 
 .swipe-button {
-  width: 6rem;
+  width: 7rem;
 }
 
 .card-icon {
