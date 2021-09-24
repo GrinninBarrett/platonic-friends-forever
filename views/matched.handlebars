@@ -1,14 +1,14 @@
 {{#each users as |user|}}
 
-<div class="container center-align" id="friend-card">
-    <div class="row z-depth-3" id="friend-info">
-        <img class="friend_pic" src="{{profile_pic}}" alt="{{first_name}}">
-        <ul>
-            <li><h5><strong>{{first_name}}</strong></h5></li>
-            <li><h6><em>{{city}}, {{state}}</em></h6></li>
-            <li><h6>{{bio}}</h6></li>
-            <li><a href="mailto:{{email}}" class="match-message">Message</></li>
-        </ul>
+<div class="container center-align row">
+    <div class="card friend-card col s12 m8 offset-m2 xl6 offset-xl3 z-depth-3" id="friend-info">
+        <img class="friend-pic" src="{{profile_pic}}" alt="{{first_name}}">
+        <div class="card-content friend-info">
+            <h5><strong>{{first_name}}</strong></h5>
+            <h6 class="friend-card-item"><em>{{city}}, {{state}}</em></h6>
+            <p id="friend-card-bio" class="card-bio friend-card-item">"{{bio}}"</p>
+            <a class="waves-effect waves-light btn friend-card-item" href="mailto:{{email}}" target="_blank">Message</a>
+        </div>
     </div>
 </div>
 

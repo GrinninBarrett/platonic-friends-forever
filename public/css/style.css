@@ -2,6 +2,10 @@ body {
   justify-content: center;
 }
 
+h5 {
+  margin-top: 0;
+}
+
 .nav-wrapper {
   padding: 0 25px;
 }
@@ -46,12 +50,12 @@ body {
   border-radius: 2px;
 }
 
-.swipe-card {
+.swipe-card, .friend-card {
   margin-top: 2rem;
   border-radius: 10px;
 }
 
-.swipe-info {
+.swipe-info, .friend-info {
   display: flex;
   flex-direction: column;
 }
@@ -60,6 +64,11 @@ body {
   width: 75%;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 0;
+}
+
+.swipe-button {
+  width: 6rem;
 }
 
 .card-icon {
@@ -75,8 +84,12 @@ body {
   margin-top: 4rem;
 }
 
-#friend-card {
-  margin-top: 20px;
+.friend-card-item {
+  margin-top: 10px;
+}
+
+#friend-card-bio {
+  margin-top: 10px;
 }
 
 #friend-info {

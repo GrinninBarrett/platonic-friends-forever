@@ -4,13 +4,13 @@
   <div class="card swipe-card col s12 m8 offset-m2 xl6 offset-xl3 z-depth-3">
       <img class="friend-pic center-align" src="{{profile_pic}}" alt="{{first_name}} {{#if last_name}}{{last_name}}{{/if}}">
     <div class="card-content swipe-info">
-      <h5 class="card-title grey-text text-darken-4">
+      <h5 class="grey-text text-darken-4">
         {{first_name}} {{last_name}}
         <span class="activator"><i class="material-icons card-icon right">more_vert</i></span>
       </h5>
         <ul class="card-buttons">
-          <li><button class="waves-effect waves-light btn left">Like</button></li>
-          <li><button class="waves-effect waves-light btn right">Dislike</button></li>
+          <li><button id="follow-button" class="waves-effect waves-light btn left swipe-button">Follow</button></li>
+          <li><button id="dismiss-button" class="waves-effect waves-light btn right swipe-button">Dismiss</button></li>
         </ul>
     </div>
     <div class="card-reveal center-align">
