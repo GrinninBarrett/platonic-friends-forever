@@ -45,10 +45,10 @@ const signupFormHandler = async (event) => {
   }
 };
 
-document
-  .querySelector("#login-form")
-  .addEventListener("submit", loginFormHandler);
+if (document.querySelector("#login-form")) {
+  document.querySelector("#login-form").addEventListener("submit", loginFormHandler);
+}
 
-document
-  .querySelector("#create-account-form")
-  .addEventListener("submit", signupFormHandler);
+if (document.querySelector("#create-account-form")) {
+  document.querySelector("#create-account-form").addEventListener("submit", signupFormHandler);
+}

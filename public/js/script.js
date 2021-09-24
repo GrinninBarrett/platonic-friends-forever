@@ -75,44 +75,38 @@ deleteButton.addEventListener("click", handleDeleteUser);
 
 
 // Allow a user to edit their profile information
-const handleUpdateUser = (event) => {
+const handleUpdateUser = async (event) => {
   event.preventDefault();
 
-  if (!(updateFirstNameEl.value.trim()) 
-      || (updateLastNameEl.value.trim()) 
-      || (updateCityEl.value.trim())
-      || (updateStateEl.value.trim())
-      || (updateBioEl.value.trim())
-      || (updatePasswordEl.value.trim())
-      ) {
-        return;
-      }
+  const first_name = updateFirstNameEl.value.trim();
+  const last_name = updateLastNameEl.value.trim();
+  const city = updateCityEl.value.trim();
+  const state = updateStateEl.value.trim()
+  const bio = updateBioEl.value.trim();
+  const password = updatePasswordEl.value.trim();
 
-  // For each element, check if it has text, indicating the user wants to edit that field
-  if (updateFirstNameEl.value.trim().length) {
-    const first_name = updateFirstNameEl.value.trim();
+  // Exit function if no fields have any text in them
+  if (!(first_name || last_name || city || state || bio || password)) {
+    return;
   }
 
-  if (updateLastNameEl.value.trim().length) {
-    const last_name = updateLastNameEl.value.trim();
-  }
+  const userData = await fetch('api/users/edit', {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  })
 
-  if (updateCityEl.value.trim().length) {
-    const city = updateCityEl.value.trim();
-  }
+  let userID = userData.id;
 
-  if (updateStateEl.value.trim().length) {
-    const state = updateStateEl.value.trim();
-  }
+  const response = await fetch(`/api/users/${userID}`, {
+    method: "PUT",
+    body: JSON.stringify({ first_name, last_name, city, state, bio, password }),
+    headers: { "Content-Type": "application/json" },
+  })
 
-  if (updateBioEl.value.trim().length) {
-    const bio = updateBioEl.value.trim();
+  if (response.ok) {
+    document.location.replace("/profile");
+  } else {
+    alert(response.statusText);
   }
-
-  if (updatePasswordEl.value.trim().length) {
-    const password = updatePasswordEl.value.trim();
-  }
-
-  
 
 }

@@ -15,6 +15,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/edit", async (req, res) => {
+  try {
+    const userData = await User.findByPk({
+      where: {
+        id: req.session.user_id
+      }    
+    });
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // Get single user by ID
 router.get("/:id", async (req, res) => {
