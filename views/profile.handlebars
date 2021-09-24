@@ -1,21 +1,21 @@
-<body>
-    <div class="card">
-      <div class="card-wrapper">
-        <div class="card-content">
-          <img class="friend_pic" src="{{profile_pic}}" alt="{{first_name}}">
-          <ul class="tabs tabs-fixed-width teal-text">
-            <li class="tab"><a href="#test5">{{first_name}} {{last_name}}</a></li>
-            <li class="tab"><a href="#test4">{{city}}, {{state}}</a></li>
-          </ul>
+<div class="container center-align row">
+    <div class="card friend-card col s12 m8 offset-m2 xl6 offset-xl3 z-depth-3" id="friend-info">
+        <img class="friend-pic" src="{{profile_pic}}" alt="{{first_name}}">
+        <div class="card-content friend-info">
+            <h5><strong>{{first_name}}</strong></h5>
+            <h6 class="friend-card-item"><em>{{city}}, {{state}}</em></h6>
+            <p id="friend-card-bio" class="card-bio friend-card-item">"{{bio}}"</p>
+            <a id="edit-profile-button" class="waves-effect waves-light btn friend-card-item" href="#edit-profile-modal">Edit Profile</a>
         </div>
-      <div class="card-tabs">
-        <p>{{bio}}</p>
-      </div>
-      <div class="card-content brown lighten-4 teal-text">
-        <div id="test4">Tag 1</div>
-        <div id="test5">Tag 2</div>
-        <div id="test6">Tag 3</div>
-      </div>
     </div>
-  </div>  
-</body>
+</div>
+
+<div id="edit-profile-modal" class="modal">
+  <div class="modal-content">
+    <h4>Edit Profile</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
