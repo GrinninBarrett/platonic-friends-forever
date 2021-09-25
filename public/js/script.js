@@ -64,12 +64,12 @@ const logOutDeletedUser = async () => {
   });
 
   if (response.ok) {
-    document.location.replace("/");
+    deleteToast();
+    setTimeout(() => {document.location.replace("/")}, 1000);
   } else {
     alert(response.statusText);
   }
 
-  deleteToast();
 };
 
 // Fetch request to delete a user
@@ -93,6 +93,7 @@ if (deleteButton) {
   deleteButton.addEventListener("click", handleDeleteUser);
 }
 
+
 // Allow a user to edit their profile information
 const handleUpdateUser = async (event) => {
   event.preventDefault();
@@ -108,13 +109,6 @@ const handleUpdateUser = async (event) => {
     return;
   }
 
-  // const userData = await fetch('api/users/edit', {
-  //   method: "GET",
-  //   headers: { "Content-Type": "application/json" },
-  // })
-
-  // let userID = userData.id;
-
   const response = await fetch("/api/users", {
     method: "PUT",
     body: JSON.stringify({ first_name, last_name, city, state, bio }),
@@ -122,8 +116,8 @@ const handleUpdateUser = async (event) => {
   });
 
   if (response.ok) {
-    document.location.replace("/profile");
     saveToast();
+    setTimeout(() => {document.location.replace("/profile")}, 1000);
   } else {
     M.toast({
       html: `${response.statusText}`,
