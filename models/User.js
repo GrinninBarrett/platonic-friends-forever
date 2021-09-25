@@ -68,7 +68,7 @@ User.init(
         console.log(newUserData);
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         const randomNumber = getRandomNumber();
-        newUserData.profile_pic = `https://randomuser.me/api/portraits/men/${randomNumber}.jpg`;
+        newUserData.profile_pic = 'https://randomuser.me/api/portraits/men/'+randomNumber+'.jpg';
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
