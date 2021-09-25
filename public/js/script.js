@@ -37,6 +37,25 @@ for (let i = 0; i < dismissButtons.length; i++) {
   dismissButtons[i].addEventListener("click", dismissToast);
 }
 
+// Toast to show when a user saves their changes to their account info
+const saveToast = function () {
+  M.toast({
+    html: "Changes saved!",
+    displayLength: 2000,
+    classes: "toast",
+  });
+};
+
+// Toast to show when a user successfully deletes their account
+const deleteToast = function () {
+  M.toast({
+    html: "Account successfully deleted!",
+    displayLength: 2000,
+    classes: "toast",
+  });
+};
+
+
 // After a user is deleted, log them out as well, returning to the homepage
 const logOutDeletedUser = async () => {
   const response = await fetch("/api/users/logout", {
@@ -50,19 +69,23 @@ const logOutDeletedUser = async () => {
     alert(response.statusText);
   }
 
-  alert("Account successfully deleted");
+  deleteToast();
 };
 
 // Fetch request to delete a user
 const handleDeleteUser = (event) => {
   event.preventDefault();
 
-  fetch(`/api/users`, {
-    method: "DELETE",
-    headers: { "Content-Type": "application/json" },
-  });
+  // Confirm that the user actually wants to delete their account
+  if (window.confirm("Are you sure you want to permanently delete your account?")) {
+    fetch(`/api/users`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+  
+    logOutDeletedUser();
+  }
 
-  logOutDeletedUser();
 };
 
 // Event listener to delete user
@@ -100,9 +123,15 @@ const handleUpdateUser = async (event) => {
 
   if (response.ok) {
     document.location.replace("/profile");
+    saveToast();
   } else {
-    alert(response.statusText);
-  }
+    M.toast({
+      html: `${response.statusText}`,
+      displayLength: 2000,
+      classes: "toast",
+    });  }
 };
 
-updateButton.addEventListener("click", handleUpdateUser);
+if (updateButton) {
+  updateButton.addEventListener("click", handleUpdateUser);
+}
