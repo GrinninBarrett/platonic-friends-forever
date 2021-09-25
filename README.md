@@ -15,8 +15,7 @@ SO THAT I can meet new people nearby who share the same interests
 
 ## Link to Deployed Application
 
-<!-- TODO: add link to deployed application -->
-[Deployed Application]()
+[Deployed Application](https://pfforever.herokuapp.com/)
 
 ## Table of Contents
 
@@ -47,20 +46,23 @@ SO THAT I can meet new people nearby who share the same interests
 ![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white)
 
 
-## Functionality
-
-
 ## Challenges
 
-<!-- TODO: Add challenges as they arise -->
+* Creating the appropriate routes and models to form associations between users
+* Creating associations between users and tags
+* Filtering view results by location and/or common interest
 
 ## Future Development
 
-<!-- TODO: Add ideas for future development as they arise -->
+* Include geolocation API to only show users who are nearby
+* Filter results by common interest
+* Allow in-app chat between users who have followed each other
+* Upload photos from user's computer for profile picture
+* Be more considerate of accessibility
+* Allow users to block or report other users
 
 ## Contact
 
-<!-- TODO: Add contact info -->
 * Tucker Barrett - [ctbarrett.tech@gmail.com](mailto:ctbarrett.tech@gmail.com)
 
 * Pam Hammond - [hammondpamelac@gmail.com](mailto:hammondpamelac@gmail.com)
