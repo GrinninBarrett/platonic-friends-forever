@@ -17,7 +17,11 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/profile");
     } else {
-      alert(response.statusText);
+      M.toast({
+        html: `${response.statusText}`,
+        displayLength: 2000,
+        classes: "toast",
+      });    
     }
   }
 };
@@ -40,7 +44,11 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert(response.statusText);
+      M.toast({
+        html: `${response.statusText}`,
+        displayLength: 2000,
+        classes: "toast",
+      });
     }
   }
 };
