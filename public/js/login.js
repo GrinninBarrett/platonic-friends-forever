@@ -26,6 +26,8 @@ const loginFormHandler = async (event) => {
   }
 };
 
+
+// Create a new account from signup form
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
