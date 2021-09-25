@@ -37,6 +37,25 @@ for (let i = 0; i < dismissButtons.length; i++) {
   dismissButtons[i].addEventListener("click", dismissToast);
 }
 
+// Toast to show when a user saves their changes to their account info
+const saveToast = function () {
+  M.toast({
+    html: "Changes saved!",
+    displayLength: 2000,
+    classes: "toast",
+  });
+};
+
+// Toast to show when a user successfully deletes their account
+const deleteToast = function () {
+  M.toast({
+    html: "Account successfully deleted!",
+    displayLength: 2000,
+    classes: "toast",
+  });
+};
+
+
 // After a user is deleted, log them out as well, returning to the homepage
 const logOutDeletedUser = async () => {
   const response = await fetch("/api/users/logout", {
@@ -45,30 +64,35 @@ const logOutDeletedUser = async () => {
   });
 
   if (response.ok) {
-    document.location.replace("/");
+    deleteToast();
+    setTimeout(() => {document.location.replace("/")}, 1000);
   } else {
     alert(response.statusText);
   }
 
-  alert("Account successfully deleted");
 };
 
 // Fetch request to delete a user
 const handleDeleteUser = (event) => {
   event.preventDefault();
 
-  fetch(`/api/users`, {
-    method: "DELETE",
-    headers: { "Content-Type": "application/json" },
-  });
+  // Confirm that the user actually wants to delete their account
+  if (window.confirm("Are you sure you want to permanently delete your account?")) {
+    fetch(`/api/users`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+  
+    logOutDeletedUser();
+  }
 
-  logOutDeletedUser();
 };
 
 // Event listener to delete user
 if (deleteButton) {
   deleteButton.addEventListener("click", handleDeleteUser);
 }
+
 
 // Allow a user to edit their profile information
 const handleUpdateUser = async (event) => {
@@ -85,13 +109,6 @@ const handleUpdateUser = async (event) => {
     return;
   }
 
-  // const userData = await fetch('api/users/edit', {
-  //   method: "GET",
-  //   headers: { "Content-Type": "application/json" },
-  // })
-
-  // let userID = userData.id;
-
   const response = await fetch("/api/users", {
     method: "PUT",
     body: JSON.stringify({ first_name, last_name, city, state, bio }),
@@ -99,10 +116,16 @@ const handleUpdateUser = async (event) => {
   });
 
   if (response.ok) {
-    document.location.replace("/profile");
+    saveToast();
+    setTimeout(() => {document.location.replace("/profile")}, 1000);
   } else {
-    alert(response.statusText);
-  }
+    M.toast({
+      html: `${response.statusText}`,
+      displayLength: 2000,
+      classes: "toast",
+    });  }
 };
 
-updateButton.addEventListener("click", handleUpdateUser);
+if (updateButton) {
+  updateButton.addEventListener("click", handleUpdateUser);
+}

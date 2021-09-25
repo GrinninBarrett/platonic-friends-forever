@@ -12,42 +12,40 @@
 
 <div id="edit-profile-modal" class="modal modal-fixed-footer">
   <div class="modal-content">
-            <div class="z-depth-3">
-              <form id="create-account-form" class="form">
-                <h5 class="center-align form-header">Update Profile</h5>
-                <div class="input-field">
-                  <i class="material-icons prefix">person</i>
-                  <input id="edit-first-name" type="text" class="validate" value="{{first_name}}" required>
-                  <label for="edit-first-name"></label>
-                </div>
-                <div class="input-field">
-                  <i class="material-icons prefix">person</i>
-                  <input id="edit-last-name" type="text" class="validate" value="{{last_name}}">
-                  <label for="edit-last-name"></label>
-                </div>
-                <div class="input-field">
-                  <i class="material-icons prefix">location_on</i>
-                  <input id="edit-city" type="text" class="validate" value="{{city}}">
-                  <label for="edit-city"></label>
-                </div>
-                <div class="input-field">
-                  <i class="material-icons prefix">location_on</i>
-                  <input id="edit-state" type="text" class="validate" value="{{state}}">
-                  <label for="edit-state"></label>
-                </div>
-                <div class="input-field">
-                  <i class="material-icons prefix">whatshot</i>
-                  <input id="edit-bio" type="text" class="validate" value="{{bio}}">
-                  <label for="edit-bio"></label>
-                </div>
-                <div>
-                    <button id="confirm-user-delete" class="waves-effect waves-light btn left update-button" type="submit">Delete Account</button>
-                    <button id="confirm-user-update" class="waves-effect waves-light btn right update-button" type="submit">Save</button>
-                </div>
-              </form>
-            </div>
+    <form id="create-account-form" class="form">
+      <h5 class="center-align form-header">Update Profile</h5>
+      <div class="input-field">
+        <i class="material-icons prefix">person</i>
+        <input id="edit-first-name" type="text" class="validate" value="{{first_name}}" required>
+        <label for="edit-first-name">First Name</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">person</i>
+        <input id="edit-last-name" type="text" class="validate" value="{{last_name}}">
+        <label for="edit-last-name">Last Name</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">location_on</i>
+        <input id="edit-city" type="text" class="validate" value="{{city}}">
+        <label for="edit-city">City</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">location_on</i>
+        <input id="edit-state" type="text" class="validate" value="{{state}}">
+        <label for="edit-state">State</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">whatshot</i>
+        <input id="edit-bio" type="text" class="validate" value="{{bio}}">
+        <label for="edit-bio">Bio</label>
+      </div>
+      <div class="edit-profile-buttons row">
+        <button id="confirm-user-update" class="waves-effect waves-light btn update-button col s12 m8" type="submit">Save Changes</button>
+        <button id="confirm-user-delete" class="waves-effect waves-light btn update-button col s12 m8 red accent-2" type="submit">Delete Account</button>
+      </div>
+    </form>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
   </div>
 </div>
