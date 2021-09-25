@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection.js');
+const getRandomNumber = require ('../utils/helpers');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -37,7 +38,6 @@ User.init(
     },
     profile_pic: {
       type: DataTypes.STRING,
-      defaultValue: 'N/A'
     },
     email: {
       type: DataTypes.STRING,
@@ -67,6 +67,8 @@ User.init(
       beforeCreate: async (newUserData) => {
         console.log(newUserData);
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        const randomNumber = getRandomNumber();
+        newUserData.profile_pic = `https://randomuser.me/api/portraits/men/${randomNumber}.jpg`;
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
