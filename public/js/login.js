@@ -45,7 +45,7 @@ const signupFormHandler = async (event) => {
       document.location.replace("/profile");
     } else {
       M.toast({
-        html: `${response.statusText}`,
+        html: "Problem logging in",
         displayLength: 2000,
         classes: "toast",
       });

@@ -67,14 +67,14 @@ router.post('/', async (req, res) => {
 // Update a user
 router.put('/', async (req, res) => {
   try {
-    const user = await User.findByPk(req.session.user_id);
-    const userData = await user.update(req.body);
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(userData);
+    // const user = await User.findByPk(req.session.user_id);
+    const userData = await User.update(req.body, {
+      where: {
+        id: req.session.user_id
+      }
     });
+    console.log(userData);
+    res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
   }
