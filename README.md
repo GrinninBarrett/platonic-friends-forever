@@ -46,6 +46,16 @@ SO THAT I can meet new people nearby who share the same interests
 ![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white)
 
 
+## Functionality
+#### Screenshots of Application
+![Homepage](./assets/images/homepage.png "PFF Homepage")
+
+![Signup Page](./assets/images/signup-page.png "PFF Signup Page")
+
+![Profile Page](./assets/images/profile-page.png "PFF User Profile Page")
+
+
+
 ## Challenges
 
 * Creating the appropriate routes and models to form associations between users
